@@ -7,9 +7,9 @@ app = Flask(__name__)
 app.secret_key = "your_secret_key"
 bcrypt = Bcrypt(app)
 
-
+#should work for local
 def get_db_connection():
-    DATABASE_URL = os.getenv("SUPABASE_DATABASE_URL")  # Get from environment variables
+    DATABASE_URL = "postgresql://postgres:organise123!!!@db.jxrqzssxmmnvirougzgd.supabase.co:5432/postgres"
     if not DATABASE_URL:
         raise ValueError("Database URL not set in environment variables.")
     

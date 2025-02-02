@@ -1,5 +1,13 @@
 import psycopg2
-from database import get_db_connection  # Import function from database.py
+import os
+
+#should work for local
+def get_db_connection():
+    DATABASE_URL = "postgresql://postgres:organise123!!!@db.jxrqzssxmmnvirougzgd.supabase.co:5432/postgres"
+    if not DATABASE_URL:
+        raise ValueError("Database URL not set in environment variables.")
+    
+    return psycopg2.connect(DATABASE_URL)  # Connects securely
 
 # Connect to PostgreSQL
 conn = get_db_connection()
