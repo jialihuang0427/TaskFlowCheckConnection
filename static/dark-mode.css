@@ -1,0 +1,347 @@
+/* TaskFlow Dark Mode Styling */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #E0E0E0;
+    text-align: center;
+    padding-top: 60px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1E1E1E;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a {
+    color: #E0E0E0;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: #90CAF9;
+}
+
+/* Remove Shadow on Landing Page */
+.landing-page {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.landing-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    text-shadow: 6px 6px 15px rgba(255, 255, 255, 0.45); /* Extra strong shadow */
+}
+
+.landing-content p {
+    font-size: 1.6rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Dancing Script', cursive;
+}
+
+.icon-container svg {
+    fill: rgb(255, 255, 255);
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 1)); /* Add strong shadow */
+}
+
+
+/* Sections */
+section {
+    padding: 30px 20px;
+    background: #1E1E1E;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* To-Do List & Quotes Section */
+#tasks, #quotes {
+    background: #1f1e1e;
+    border-radius: 15px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #353434;
+    padding: 20px;
+}
+
+/* Task and Quote Headers */
+#tasks h3, #quotes h3 {
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+.todo-message {
+    font-family: "Caveat Brush", serif;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 10px; /* Add spacing from the to-do list */
+}
+/* Form Styling */
+#task-form, #quote-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: #313337;
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs */
+#task-input, #quote-input, #emoji-input{
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #313337;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+    min-width: 150px;
+    background-color: #2C2C2C;
+    color: white; /* Ensure input text is white */
+}
+
+/* Focus Effect */
+#task-input:focus, #quote-input:focus {
+    border-color: #5aaccc;
+    box-shadow: 0px 0px 5px rgba(90, 172, 204, 0.5);
+}
+
+/* Add Task & Quote Button */
+#task-form button, #quote-form button {
+    background-color: #BB86FC;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Button Hover Effect */
+#task-form button:hover, #quote-form button:hover {
+    background-color: #6200EE;
+    transform: scale(1.05);
+}
+
+/* Task & Quote Items */
+.task-item, .quote-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #353434;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin: 8px 0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.task-item:hover, .quote-item:hover {
+    background: #3A3A3A;
+}
+
+/* Task & Quote Text */
+.task-text, .quote-text {
+    flex-grow: 1;
+    padding-left: 10px;
+    color: white; /* Ensure to-do and quote text is white */
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Remove Button */
+.delete-btn {
+    background-color: #a51c27;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: #450505;
+}
+
+/* Sticky Notes */
+#sticky-notes {
+    background: #121212;
+}
+
+.sticky-note {
+    background-color:  #ffccdd; /* Light pink */
+    color:black;
+    border: 1px solid #BB86FC;
+}
+
+.sticky-msg{
+    color: #ffffff; /* Darker pinkish-purple */
+
+}
+
+
+/* Fix the input field */
+#note-input {
+    border: 2px solid #ff99cc;
+}
+
+/* 🟦 Focus Effect on Input */
+#note-input:focus {
+    border-color: #ff66b2;
+    box-shadow: 0px 0px 5px rgba(255, 102, 178, 0.5);
+}
+
+/* 🟦 Style the Add Note Button */
+#note-form button {
+    background-color: #ff66b2; /* Pink */
+    color: white;
+}
+
+/* 🟦 Hover Effect */
+#note-form button:hover {
+    background-color: #ff3385;
+    transform: scale(1.05);
+}
+
+
+#sticky-notes h3 {
+    color: #ffffff; /* Darker pinkish-purple */
+   
+}
+
+
+.delete-note {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: red;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Copyright */
+.copyright {
+    background-color: #050065;
+    color: #E0E0E0;
+}
+
+#Techniques {
+    color: white;
+}
+
+/* Match heading size and color */
+#Techniques h1 {
+    color: white;
+}
+
+
+.techniques-description {
+    color: white;
+}
+
+.service-box {
+    background: #5f646a; /* Pastel blue */
+  
+}
+
+/* Ensure all text inside service-box is BLACK */
+.service-box h2,
+.service-box p,
+.service-box i {
+    color: rgb(255, 255, 255) !important; /* Forces all text to be black */
+}
+
+
+#timer-section {
+    width : 650px;
+    max-width: 1000px; /* Increase width */
+    margin: 50px auto;
+    background: #313337;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ffffff;
+}
+
+
+.mode-btn {
+    background-color: #29b6f6;
+    color: white;
+}
+
+.mode-btn.active {
+    background-color: #0277bd;
+}
+
+.mode-btn:hover {
+    background-color: #01579b;
+}
+
+.timer-display {
+    font-size: 60px;
+    font-weight: bold;
+    color: #0277bd;
+    margin: 20px 0;
+}
+
+.timer-description{
+    color: white;
+}
+
+#timerheading h1 {
+    color: #ffffff;
+}
+
+.timer-display {
+    color: #ffffff;
+}
+
+/* Adjust Contact Section Height */
+#contact {
+    background-color: #000000; /* Light Grey */
+}
+
+/* Contact Section */
+.contact-container {
+    background-color:#000000;
+}
+
+
+.contact-form p {
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: white;
+}
