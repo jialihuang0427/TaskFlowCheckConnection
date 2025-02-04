@@ -1,0 +1,1202 @@
+
+/* TaskFlow Font Styling */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+.taskflow-font {
+    font-family: 'Dancing Script', cursive;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+/* Landing Page Styling */
+.landing-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;  /* Full screen height */
+    text-align: center;
+    color: rgb(72, 2, 125);
+}
+
+.landing-content {
+    max-width: 800px;
+}
+
+
+
+/* 🟦 Stronger Text Shadow for Better Visibility */
+.landing-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgb(72, 2, 125);
+    text-shadow: 6px 6px 15px rgba(0, 0, 0,0.5); /* Extra strong shadow */
+}
+
+
+.landing-content p {
+    font-size: 1.6rem;
+    color: rgb(72, 2, 125);
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5); /* Stronger text shadow */
+}
+
+
+
+#tasks h3 {
+    font-size: 1.6rem; /* Increase font size */
+    font-family: "Roboto", sans-serif;
+    color: #1a237e;
+    font-weight: bold;
+    text-align: center;
+    font-style: normal;
+}
+
+
+/* 🟦 Style Icons: White with Shadow */
+.icon-container svg {
+    width: 50px;
+    height: 50px;
+    fill: rgb(72, 2, 125);
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 1)); /* Add strong shadow */
+}
+
+
+#home {
+    text-align: left;
+    padding-left: 5%;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    height: 75vh; /* Reduce section height */
+    justify-content: center;
+}
+
+/* Fade in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px); /* Move down initially */
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+/* Icons container */
+.icon-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.8s ease-out forwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1); /* Slight background */
+    padding: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.icon svg {
+    width: 80px;
+    height: 80px;
+    fill: white;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+/* 🟦 FIXED NAVBAR */
+.navbar {
+    background-color: #1a237e; /* Dark blue */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed; /* Fixes navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures it spans across the screen */
+    z-index: 1000; /* Keeps navbar on top of other content */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal; /* Less bold */
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* 🟦 NAVBAR BUTTON STYLING */
+/* 🟦 NAV BUTTONS (Logout + Light Mode) */
+.nav-buttons {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-right: 40px; /* Moves buttons slightly to the left */
+}
+
+
+.btn {
+    background-color: #5aaccc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #5c6bc0; /* Lighter Blue */
+}
+
+/* 🟦 LIGHT MODE BUTTON */
+.mode-btn {
+    background-color: #5aaccc;
+}
+
+.mode-btn:hover {
+    background-color: #5c6bc0;
+}
+
+/* Ensure both buttons have the same font size */
+.nav-buttons .btn, .nav-buttons .mode-btn {
+    font-size: 16px; /* Set a consistent font size */
+    font-weight: normal; /* Keep a uniform weight */
+    padding: 10px 15px; /* Ensure consistent padding */
+    text-decoration: none; /* Remove any underline */
+ 
+}
+/* Style for Background Image */
+.home-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensures the image is behind the text */
+    opacity: 0.6; /* Adjust opacity for better readability */
+}
+
+
+/* 🟦 SMOOTH SCROLLING */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 🟦 SECTIONS STYLING */
+
+section {
+    padding: 30px 20px; /* Reduce padding */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding-top: 60px; /* Adjust according to navbar height */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack sections */
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+    gap: 20px;
+}
+
+.todo-section, .quote-section {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background: #eef2f7;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-section h3, .quote-section h3 {
+    
+    font-weight: bold;
+    color: #1a237e; /* Dark blue */
+    text-align: center;
+    font-size: 1.6rem; /* Increase font size */
+    font-family: "Roboto", sans-serif;
+}
+
+/* 🟦 Make Sure Only These Sections Get Numbering */
+.todo-section ul, .quote-section ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+    counter-reset: custom-counter; /* Reset counter */
+}
+
+
+
+.todo-section ul li, .quote-section ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Keep text left, button right */
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #d1d5db; /* Light grey separation line */
+}
+
+/* 🟦 Apply Numbering Specific to These Lists */
+.todo-section ul li::before, .quote-section ul li::before {
+    content: counter(custom-counter) ". ";
+    counter-increment: custom-counter;
+    font-weight: bold;
+    color: #1a237e;
+}
+
+#quote-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.quote-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures spacing */
+    border-bottom: 1px solid #ccc; /* Light grey separator */
+    padding: 10px 0;
+}
+
+.quote-number {
+    font-weight: bold;
+    color: #007bff; /* Matches theme */
+    margin-right: 10px;
+}
+
+.quote-text {
+    flex-grow: 1; /* Ensures text takes available space */
+}
+
+
+
+
+
+.task-number {
+    font-weight: bold;
+    color: #6c757d; /* Grey color */
+    margin-right: 10px;
+    font-size: 0.8rem;
+}
+
+
+.task-deadline {
+    color: #888;
+    font-size: 14px;
+    margin-right: 15px; /* Spacing before remove button */
+}
+
+
+
+.delete-btn {
+    background-color: #a51c27;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: #450505; /* Darker blue on hover */
+}
+
+
+
+/* Adjust Contact Section Height */
+#contact {
+    width: 100%;
+    background-color: #e8ebef; /* Light Grey */
+    padding: 20px 10px; /* Reduce padding */
+    min-height: 300px; /* Reduce height */
+}
+
+/* Contact Section */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px;
+    background-color:#e8ebef;
+    max-width: 1100px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 500px;
+}
+
+.contact-form h2 {
+    font-size: 28px;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-form p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.submit-btn{
+    background-color: #5aaccc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}/* 🟦 Make "Add Task" Button the Same */
+
+
+/* 🟦 Common Style for "Add Task" & "Add Quote" Buttons */
+#task-form button, #quote-form button {
+    background-color: #5aaccc; /* Light Blue */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap; /* Prevents text breaking into two lines */
+    transition: 0.3s ease;
+}
+
+/* 🟦 Hover Effect for Both Buttons */
+#task-form button:hover, #quote-form button:hover {
+    background-color: #5c6bc0; /* Slightly darker blue */
+    transform: scale(1.05);
+}
+
+.submit-btn:hover {
+    background-color:#5c6bc0;
+}
+.contact-info {
+    flex: 1;
+    max-width: 400px;
+    padding-left: 50px;
+}
+
+.contact-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contact-info h4 {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: #555;
+}
+
+.contact-info a {
+    color: #36b49f;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Copyright Section Full Width */
+.copyright {
+    width: 100%;
+    background-color: #0c4a6e;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+#timer-section {
+    width : 90%;
+    max-width: 800px; /* Increase width */
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #0277bd;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.timer-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensure it fits its parent */
+}
+
+.timer-modes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.mode-btn {
+    background-color: #29b6f6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.mode-btn.active {
+    background-color: #0277bd;
+}
+
+.mode-btn:hover {
+    background-color: #01579b;
+}
+
+.timer-display {
+    font-size: 60px;
+    font-weight: bold;
+    color: #0277bd;
+    margin: 20px 0;
+}
+
+#start-btn {
+    background-color: #0288d1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#start-btn:hover {
+    background-color: #01579b;
+}
+
+/* Techniques Section Styling */
+#Techniques {
+    text-align: center;
+    color: #1b2f93; /* Matches "Tasks" and "Motivational Quotes" */
+    margin-top: -20px; /* Move the section up */
+}
+
+/* Match heading size and color */
+#Techniques h1 {
+    font-size: 1.6rem; /* Increase font size */
+    font-family: "Roboto", sans-serif; 
+    color: #1b2f93;
+    margin-bottom: 15px;
+    text-align: left; /* Center text */
+}
+
+
+.techniques-description {
+    text-align: center;
+    font-size: 1rem;
+    color: black; /* Darker gray for readability */
+    margin-bottom: 15px;
+}
+
+#timerheading h1 {
+    font-size: 1.6rem; /* Increase font size */
+    font-family: "Roboto", sans-serif; 
+    color: #1b2f93;
+    margin-bottom: 15px;
+    text-align: left; /* Center text */
+}
+
+
+/* Icon Styling */
+.service-box i {
+    font-size: 40px;
+    margin-bottom: 10px; /* Reduce space below icon */
+    color: white;
+}
+
+/* Service Title */
+.service-box h2 {
+    font-size: 20px; /* Slightly smaller */
+    font-weight: bold;
+    margin-bottom: 10px; /* Reduce space */
+    color: white;
+}
+
+/* Service Text */
+.service-box p {
+    font-size: 14px;
+    color: #ababab;
+}
+
+/* Hover Effects */
+.service-box:hover {
+    background: #14b8ef;
+    transform: translateY(-5px);
+}
+
+#sticky-notes {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: -70px;
+}
+
+.sticky-msg{
+    font-family: "Caveat Brush", serif;
+    font-size: 16px;
+    color: #be3098; /* Darker pinkish-purple */
+    text-align: center;
+    margin-top: 10px; /* Add spacing from the to-do list */
+}
+
+#note-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;  /* Allows wrapping on smaller screens */
+    gap: 10px;
+    max-width: 400px; /* Prevents form from stretching across the page */
+    margin: auto; /* Centers the form */
+    background: none; /* Remove background */
+    padding: 12px 20px;
+    box-shadow: none; /* Remove shadow */
+    border: none; /* Remove border */
+}
+
+/* Fix the input field */
+#note-input {
+    padding: 10px;
+    border: 2px solid #ff99cc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    width: 250px; /* Set a fixed width */
+    transition: all 0.3s ease;
+}
+
+/* 🟦 Focus Effect on Input */
+#note-input:focus {
+    border-color: #ff66b2;
+    box-shadow: 0px 0px 5px rgba(255, 102, 178, 0.5);
+}
+
+/* 🟦 Style the Add Note Button */
+#note-form button {
+    background-color: #ff66b2; /* Pink */
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* 🟦 Hover Effect */
+#note-form button:hover {
+    background-color: #ff3385;
+    transform: scale(1.05);
+}
+
+
+#notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.sticky-note {
+    background-color: #ffccdd; /* Light pink */
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    text-align: left;
+}
+
+#sticky-notes h3 {
+    font-size: 1.6rem; /* Increase font size */
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    color: #be3098; /* Darker pinkish-purple */
+    text-align: center;
+    font-style: normal;
+}
+
+
+.delete-note {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    color: red;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 600px; /* Keep a max width to avoid being too large */
+    min-width: 300px; /* Ensures it doesn't shrink too much */
+    margin: 200px auto;  /* Increase top margin */
+    width: 50%;
+    padding: 20px; /* Add spacing inside the box */
+    background: white; /* White background to separate it */
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border: 2px solid #d1d5db; /* Light grey border */
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+/* To-Do List Items */
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin: 8px 0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    transition: background 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* 🟦 Hover Effect - Makes the Task Item Greyer */
+.task-item:hover {
+    background: #f1f1f1; /* Light grey on hover */
+    transition: background 0.3s ease-in-out;
+}
+
+
+
+
+
+/* 🟦 Style Task Text */
+.task-text {
+    flex-grow: 1;
+    padding-left: 10px;
+    color: #333;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#task-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;  /* Ensures items wrap to new lines if needed */
+    background: #ffffff; /* White background */
+    padding: 12px 20px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+#task-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    width: 100%;  /* Make inputs fully responsive */
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+/* 🟦 Focus Effect on Input */
+#task-input:focus {
+    border-color: #5aaccc;
+    box-shadow: 0px 0px 5px rgba(90, 172, 204, 0.5);
+}
+/* 🟦 Style the Add Task Button */
+#task-form button {
+    background-color: #5aaccc; /* Light Blue */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* 🟦 Button Hover Effect */
+#task-form button:hover {
+    background-color: #5c6bc0;
+    transform: scale(1.05);
+}
+
+.todo-message {
+    font-family: "Caveat Brush", serif;
+    font-size: 16px;
+    color: #1a237e;
+    text-align: center;
+    margin-top: 10px; /* Add spacing from the to-do list */
+}
+
+/* 🟦 Motivational Quotes Section - Styled Like To-Do List */
+#quotes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px; /* Keep a max width to avoid being too large */
+    min-width: 300px; /* Ensures it doesn't shrink too much */
+    text-align: center;
+    margin: 200px auto;  /* Increase top margin */
+    width: 50%;
+    padding: 20px; /* Add spacing inside the box */
+    background: #eef4ff; /* Light blue/purple background */
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border: 2px solid #cfd8ff; /* Light blue border */
+}
+
+/* 🟦 Motivational Quotes Header */
+#quotes h3 {
+    color: #3f51b5; /* Darker blue */
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem; /* Increase font size */
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+/* 🟦 Make the Quote List Look Like the Task List */
+#quote-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+/* 🟦 Individual Quote Item */
+.quote-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin: 8px 0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    transition: background 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* 🟦 Hover Effect - Makes the Quote Item Greyer */
+.quote-item:hover {
+    background: #e6ebff; /* Light purple on hover */
+    transition: background 0.3s ease-in-out;
+}
+
+/* 🟦 Quote Number Styling */
+.quote-number {
+    font-weight: bold;
+    color: grey;
+    margin-right: 0.8rem;
+}
+
+/* 🟦 Quote Text Styling */
+.quote-text {
+    flex-grow: 1;
+    padding-left: 10px;
+    font-size: 15px;
+    font-style: italic; /* Italicized text */
+    color: #3f51b5; /* Darker blue */
+}
+
+/* 🟦 Style the Add Quote Form */
+#quote-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;  /* Ensures items wrap to new lines if needed */
+    justify-content: center;
+    gap: 10px;
+    background: #ffffff; /* White background */
+    padding: 12px 20px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* 🟦 Style the Quote Input */
+#quote-input, #emoji-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #cfd8ff;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    width: 100%;  /* Make inputs fully responsive */
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+/* 🟦 Focus Effect on Input */
+#quote-input:focus, #emoji-input:focus {
+    border-color: #5aaccc;
+    box-shadow: 0px 0px 5px rgba(90, 172, 204, 0.5);
+}
+
+/* 🟦 Style the Add Quote Button */
+#quote-form button {
+    background-color: #5aaccc; /* Light Blue */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 🟦 Button Hover Effect */
+#quote-form button:hover {
+    background-color: #5c6bc0;
+    transform: scale(1.05);
+}
+
+.services-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-box {
+    background: #b0c4de; /* Pastel blue */
+    padding: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    min-height: 300px; /* Set a uniform minimum height */
+    flex: 1; /* Ensures all boxes stretch evenly */
+}
+
+/* Make sure the button container pushes the button to the bottom */
+.btn-container {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+/* Style the "More Info" button */
+.info-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #5aaccc; /* Pastel blue */
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.info-btn:hover {
+    background-color: #007bff; /* Slightly darker blue on hover */
+    transform: scale(1.05);
+}
+
+/* Ensure all text inside service-box is BLACK */
+.service-box h2,
+.service-box p,
+.service-box i {
+    color: black !important; /* Forces all text to be black */
+}
+
+.timer-description{
+    text-align: left;
+    font-size: 1rem;
+    color: black; /* Darker gray for readability */
+    margin-bottom: 15px;
+}
+
+/* Initial state: hidden and slightly moved down */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When the section becomes visible */
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🟦 HAMBURGER MENU FOR MOBILE */
+.navbar .fa-bars {
+    display: none; /* Hide by default */
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.nav-links .fa-circle-xmark {
+    display: none; /* Hide by default */
+    font-size: 25px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+}
+
+/* 🟦 RESPONSIVE NAVBAR */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #1a237e;
+        z-index: 1000;
+    }
+
+    .nav-buttons {
+        display: flex;
+        flex-direction: row; /* Stack buttons vertically */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center buttons */
+        width: 100%;
+        gap: 10px;
+        margin-top: 10px;
+        margin-right : 20px;
+    }
+
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 38%; /* Covers 60% of the screen */
+        height: 100vh; /* Full height */
+        background: #1a237e;
+        padding-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: right 0.4s ease-in-out; /* Smooth sliding */
+        overflow-y: hidden;
+    }
+
+       /*  When active, slide it into view */
+    .nav-links.show {
+        right: 0;
+    }
+    body.no-scroll {
+        overflow: hidden;
+    }
+
+
+    .nav-links li {
+        display: block;
+        margin: 10px 0;
+    }
+
+   
+    .fa-circle-xmark {
+        display: block !important;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        top: 20px;
+        left: 20px; /* Move close button to left inside menu */
+        z-index: 1101;
+    }
+   
+
+    .navbar  {
+        display: block; /* Show hamburger icon */
+        
+    }
+    .fa-bars{
+        display: block !important; /* Ensure menu button is visible */
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1100;
+    }
+    .landing-content h1 {
+        font-size: 1.5rem; /* Decrease size from 3rem to 2rem */
+    }
+    
+    .landing-content p {
+        font-size: 1.2rem; /* Reduce paragraph text size */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    #tasks, #quotes {
+        width: 100%; /* Make list full-width on mobile */
+        padding: 15px;
+    }
+
+    #task-form, #quote-form {
+        flex-direction: column; /* Stack inputs & buttons */
+    }
+
+    #task-input, #quote-input, #emoji-input {
+        width: 100%; /* Ensure inputs stretch */
+    }
+
+    #task-form button, #quote-form button {
+        width: 100%; /* Buttons full width */
+    }
+
+    .task-item, .quote-item {
+        flex-direction: column; /* Stack elements */
+        text-align: center;
+    }
+}
+
+/* Make them stack in mobile */
+@media (max-width: 768px) {
+    .services-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .service-box {
+        width: 90%; /* Make them take full width */
+        max-width: 400px; /* Set a max width */
+    }
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Make them stack in mobile */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-form, .contact-info {
+        max-width: 90%; /* Adjust width */
+        width: 100%;
+    }
+}
