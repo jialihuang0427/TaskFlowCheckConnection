@@ -7,13 +7,32 @@ app = Flask(__name__)
 app.secret_key = "your_secret_key"
 bcrypt = Bcrypt(app)
 
-#should work for local
+DATABASE = "jiali_huang"
+USER = "jiali_huang"
+PASSWORD = "hjkgs7g8s678gg"
+HOST = "imperial-2025.ckp3dl3vzxoh.eu-west-2.rds.amazonaws.com"
+PORT = "5432"
+
 def get_db_connection():
-    DATABASE_URL = "postgresql://postgres:organise123!!!@db.jxrqzssxmmnvirougzgd.supabase.co:5432/postgres"
-    if not DATABASE_URL:
-        raise ValueError("Database URL not set in environment variables.")
-    
-    return psycopg2.connect(DATABASE_URL)  # Connects securely
+    """
+    Establishes and returns a connection to the PostgreSQL database.
+    """
+    try:
+        conn = psycopg2.connect(
+            host=HOST,
+            user=USER,
+            password=PASSWORD,
+            dbname=DATABASE,
+            port=PORT
+        )
+        print("Connected to the database successfully!")
+        return conn
+    except psycopg2.Error as e:
+        print(f"Database connection error: {e}")
+        return None
+
+# Get the database connection
+conn = get_db_connection()
 
 
 
@@ -28,7 +47,7 @@ def todo():
     if "user_id" not in session:
         return redirect(url_for("login"))
 
-    conn = get_db_connection()
+    
     cur = conn.cursor()
 
     if request.method == "POST":

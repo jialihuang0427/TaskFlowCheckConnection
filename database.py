@@ -1,16 +1,34 @@
 import psycopg2
 import os
 
-#should work for local
-def get_db_connection():
-    DATABASE_URL = "postgresql://postgres:organise123!!!@db.jxrqzssxmmnvirougzgd.supabase.co:5432/postgres"
-    if not DATABASE_URL:
-        raise ValueError("Database URL not set in environment variables.")
-    
-    return psycopg2.connect(DATABASE_URL)  # Connects securely
 
-# Connect to PostgreSQL
+DATABASE = "jiali_huang"
+USER = "jiali_huang"
+PASSWORD = "hjkgs7g8s678gg"
+HOST = "imperial-2025.ckp3dl3vzxoh.eu-west-2.rds.amazonaws.com"
+PORT = "5432"
+
+def get_db_connection():
+    """
+    Establishes and returns a connection to the PostgreSQL database.
+    """
+    try:
+        conn = psycopg2.connect(
+            host=HOST,
+            user=USER,
+            password=PASSWORD,
+            dbname=DATABASE,
+            port=PORT
+        )
+        print("Connected to the database successfully!")
+        return conn
+    except psycopg2.Error as e:
+        print(f"Database connection error: {e}")
+        return None
+
+# Get the database connection
 conn = get_db_connection()
+
 
 cur = conn.cursor()
 
