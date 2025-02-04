@@ -47,7 +47,11 @@ def todo():
     if "user_id" not in session:
         return redirect(url_for("login"))
 
-    
+    # 🔹 Always open a new database connection for each request
+    conn = get_db_connection()
+    if not conn:
+        return "Database connection failed", 500  # Handle connection failure
+
     cur = conn.cursor()
 
     if request.method == "POST":
@@ -58,12 +62,14 @@ def todo():
                 cur.execute("INSERT INTO tasks (user_id, task) VALUES (%s, %s) RETURNING id", (session["user_id"], task))
                 task_id = cur.fetchone()[0]
                 conn.commit()
+
                 cur.close()
                 conn.close()
-                return jsonify({"success": True, "task": task, "task_id": task_id})  # ✅ Return JSON instead of redirect
+                return jsonify({"success": True, "task": task, "task_id": task_id})
 
+        cur.close()
+        conn.close()
         return jsonify({"success": False})
-
 
     # Fetch tasks for the logged-in user
     cur.execute("SELECT id, task FROM tasks WHERE user_id = %s ORDER BY id ASC", (session["user_id"],))
@@ -81,6 +87,7 @@ def todo():
     conn.close()
 
     return render_template("todo.html", tasks=tasks, quotes=quotes, quote_count=quote_count)
+
 
 @app.route("/delete/<int:task_id>", methods=["POST"])
 def delete_task(task_id):
