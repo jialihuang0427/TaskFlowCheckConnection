@@ -1130,7 +1130,7 @@ h2 {
         z-index: 1100;
     }
     .landing-content h1 {
-        font-size: 3.5rem; /* Decrease size from 3rem to 2rem */
+        font-size: 10rem; /* Decrease size from 3rem to 2rem */
     }
     
     .landing-content p {
