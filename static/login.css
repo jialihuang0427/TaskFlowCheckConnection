@@ -161,7 +161,7 @@ body {
     object-fit: cover;  /* Ensures the image covers the section without distortion */
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
     .container {
         width: 100%;
         height: auto; /* Adjust height dynamically */
@@ -186,7 +186,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
     .input-group input {
         width: 100%; /* Full width input */
         padding: 12px; /* Slightly larger padding */
