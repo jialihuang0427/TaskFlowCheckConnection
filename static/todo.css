@@ -1045,7 +1045,7 @@ h2 {
 }
 
 /* 🟦 RESPONSIVE NAVBAR */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 518px) {
     .navbar {
         display: flex;
         flex-direction: column;
@@ -1138,19 +1138,21 @@ h2 {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 518px) {
     .container {
-        max-width: 95%;
+        max-width: 518px;
         padding: 20px;
     }
 
     #tasks, #quotes {
         width: 100%; /* Make list full-width on mobile */
         padding: 15px;
+        max-width : 518px;
     }
 
     #task-form, #quote-form {
         flex-direction: column; /* Stack inputs & buttons */
+        max-width: 518px;
     }
 
     #task-input, #quote-input, #emoji-input {
@@ -1168,7 +1170,7 @@ h2 {
 }
 
 /* Make them stack in mobile */
-@media (max-width: 600px) {
+@media (max-width: 518px) {
     .services-list {
         flex-direction: column;
         align-items: center;
@@ -1176,9 +1178,8 @@ h2 {
     
     .service-box {
         width: 90%; /* Make them take full width */
-        max-width: 400px; /* Set a max width */
+        max-width: 518px; /* Set a max width */
     }
-}
 
 .contact-container {
     display: flex;
@@ -1187,8 +1188,45 @@ h2 {
     gap: 20px;
 }
 
+
+
+.timer-container {
+    width: 90%; /* Make it smaller */
+    max-width: 518px; /* Adjust max width */
+    padding: 10px;
+}
+
+
+#timer-section {
+    width: 90% !important; /* Reduce width */
+    max-width: 500px !important; /* Adjust max width */
+    margin: 20px auto !important; /* Reduce margin */
+    padding: 20px !important; /* Reduce padding */
+    background: #2b2b2b !important; /* Darker background */
+    color: white !important; /* Text color */
+    border-radius: 10px !important;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3) !important; /* Stronger shadow */
+    justify-content: center !important;
+}
+
+.timer-display {
+    font-size: 40px; /* Reduce further for mobile */
+}
+
+.mode-btn {
+    font-size: 14px; /* Adjust button text size */
+    padding: 8px 12px;
+    min-width: 70px;
+}
+
+
+#start-btn {
+    font-size: 16px; /* Make start button smaller */
+    padding: 8px 16px;
+}
+}
 /* Make them stack in mobile */
-@media (max-width: 768px) {
+@media (max-width: 518px) {
     .contact-container {
         flex-direction: column;
         align-items: center;
