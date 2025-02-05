@@ -1226,7 +1226,7 @@ h2 {
     max-width: 500px !important; /* Adjust max width */
     margin: 20px auto !important; /* Reduce margin */
     padding: 20px !important; /* Reduce padding */
-    background: #2b2b2b !important; /* Darker background */
+    background: #2b2b2b ; /* Darker background */
     color: white !important; /* Text color */
     border-radius: 10px !important;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3) !important; /* Stronger shadow */

@@ -169,6 +169,12 @@ body {
         box-shadow: none; /* Remove shadow for cleaner mobile view */
         border-radius: 0; /* Remove rounded corners */
     }
+    .heading-container{
+        text-align: left !important;
+        white-space: pre-line; /* Allows wrapping */
+    }
+
+   
 
     .login-section {
         width: 100%; /* Expand login form to full width */
@@ -189,13 +195,13 @@ body {
 
 @media only screen and (max-width: 600px) {
     .input-group input {
-        width: 100%; /* Full width input */
+        width: 80% !important; /* Full width input */
         padding: 12px; /* Slightly larger padding */
         font-size: 16px;
     }
 
     .btn {
-        width: 100%; /* Make Sign In button full width */
+        width: 70%; /* Make Sign In button full width */
         padding: 12px;
         font-size: 16px;
     }
