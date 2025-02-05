@@ -1145,28 +1145,40 @@ h2 {
     }
 
     #tasks, #quotes {
-        width: 100%; /* Make list full-width on mobile */
+        width: 90% !important; /* Make list full-width on mobile */
         padding: 15px;
         max-width : 518px;
     }
 
     #task-form, #quote-form {
-        flex-direction: column; /* Stack inputs & buttons */
+        justify-content:center !important;
+        flex-direction: row !important; /* Stack inputs & buttons */
         max-width: 518px;
         width: 320px !important; 
     }
 
     #task-input, #quote-input, #emoji-input {
-        width: 90% !important; /* Ensure inputs stretch */
+        width: 250px !important; /* Ensure inputs stretch */
+        text-align:center;
+
     }
+
+    #add-task-btn{
+        width : 150px !important;
+        justify-content: center;
+        text-align: center !important;
+    }
+
 
     #task-form button, #quote-form button {
         width: 100%; /* Buttons full width */
     }
 
     .task-item, .quote-item {
-        flex-direction: column; /* Stack elements */
+        flex-direction: row !important; 
         text-align: center;
+        width: 300px !important; 
+
     }
 }
 
