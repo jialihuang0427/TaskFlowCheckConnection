@@ -1256,11 +1256,18 @@ h2 {
     .contact-container {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        text-align: center ;
+        justify-content: center ;
     }
+    
 
     .contact-form, .contact-info {
         max-width: 90%; /* Adjust width */
         width: 100%;
+        justify-content: center ;
+        text-align: left ;
+    }
+    .submit-btn{
+        margin-right: 50px !important; /* Moves it left */
     }
 }
