@@ -1153,10 +1153,11 @@ h2 {
     #task-form, #quote-form {
         flex-direction: column; /* Stack inputs & buttons */
         max-width: 518px;
+        width: 320px !important; 
     }
 
     #task-input, #quote-input, #emoji-input {
-        width: 100%; /* Ensure inputs stretch */
+        width: 90% !important; /* Ensure inputs stretch */
     }
 
     #task-form button, #quote-form button {
@@ -1191,7 +1192,7 @@ h2 {
 
 
 .timer-container {
-    width: 90%; /* Make it smaller */
+    width: 95%; /* Make it smaller */
     max-width: 518px; /* Adjust max width */
     padding: 10px;
 }
