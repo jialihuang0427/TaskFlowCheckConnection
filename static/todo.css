@@ -1169,7 +1169,18 @@ h2 {
         text-align: center !important;
     }
 
+    
+    #timerheading{
+        text-align: center !important;
+        justify-content: center !important;
+    }
 
+    .add-quote {
+        width : 150px !important;
+        justify-content: center;
+        text-align: center !important;
+    }
+    
     #task-form button, #quote-form button {
         width: 100%; /* Buttons full width */
     }
@@ -1197,7 +1208,7 @@ h2 {
 .contact-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center !important;
     gap: 20px;
 }
 
@@ -1225,6 +1236,8 @@ h2 {
 .timer-display {
     font-size: 40px; /* Reduce further for mobile */
 }
+
+
 
 .mode-btn {
     font-size: 14px; /* Adjust button text size */

@@ -521,7 +521,7 @@
         <form id="quote-form" action="{{ url_for('add_quote') }}" method="POST">
             <input type="text" id="quote-input" name="quote" placeholder="New Quote" required>
             <input type="text" id="emoji-input" name="emoji" placeholder="Emoji (optional)">
-            <button type="submit">Add Quote</button>
+            <button type="submit" class = "add-quote">Add Quote</button>
         </form>
     
         <ul id="quote-list">
@@ -622,6 +622,7 @@
 
 </section>
 </div>
+
     <section id="contact">
         <div class="contact-container">
             <!-- Left: Contact Form -->
