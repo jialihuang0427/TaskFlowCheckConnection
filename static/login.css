@@ -168,6 +168,7 @@ body {
         flex-direction: column; /* Stack elements */
         box-shadow: none; /* Remove shadow for cleaner mobile view */
         border-radius: 0; /* Remove rounded corners */
+        justify-content: center !important;
     }
     .heading-container{
         text-align: center !important;
@@ -178,13 +179,13 @@ body {
    
 
     .login-section {
-        width: 100%; /* Expand login form to full width */
-        height: 100vh; /* Take full height */
+        width: 90%; /* Expand login form to full width */
+        height: 80%; /* Take full height */
         padding: 40px 20px; /* Adjust padding */
     }
     .register-section {
-        width: 100%; /* Expand register form to full width */
-        height: 100vh; /* Take full height */
+        width: 90%; /* Expand register form to full width */
+        height: 80%; /* Take full height */
         padding: 40px 20px; /* Adjust padding */
     }
 
