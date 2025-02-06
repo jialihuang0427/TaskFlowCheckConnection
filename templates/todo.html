@@ -15,6 +15,24 @@
     
     
     <script>
+       
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const checkboxes = document.querySelectorAll(".task-checkbox");
+        
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", function () {
+                    const taskText = this.closest(".task-item").querySelector(".task-text");
+                    if (this.checked) {
+                        taskText.classList.add("crossed");
+                    } else {
+                        taskText.classList.remove("crossed");
+                    }
+                });
+            });
+        });
+        
+        
         document.addEventListener("DOMContentLoaded", function () {
             var sidemenu = document.querySelector(".nav-links");
             var toggleBtn = document.querySelector(".fa-bars");
@@ -484,7 +502,7 @@
         <img src="{{ url_for('static', filename='computer.jpeg') }}" alt="Background Image" class="home-bg">
         <div class="landing-content">
             <h1 class="fade-in">Stay Organised, Stay Productive</h1>
-            <p class="fade-in">Scroll Down for Task Tracker </p>
+            <p class="fade-in"> The Basic Manager for Short-term tasks </p>
             
             <div class="icon-container fade-in">
                 
@@ -525,7 +543,7 @@
         <ul id="task-list">
             {% for task in tasks %}
                 <li class="task-item">
-
+                    <input type="checkbox" class="task-checkbox">
                     <span class="task-number">{{ loop.index }}.</span>
                     <span class="task-text">{{ task[1] }}</span>
                     <form class="delete-task-form" action="{{ url_for('delete_task', task_id=task[0]) }}" method="POST">

@@ -30,6 +30,10 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Slight shadow for pop effect */
 }
 
+/* Hide logo by default */
+.logo-container {
+    display: none;
+}
 
 .sign-in-text {
     font-size: 16px; /* Smaller font size */
@@ -110,9 +114,9 @@ body {
 
 .input-group label {
     font-size: 14px;
-    font-weight: bold;
     color: #033e7c; /* Light purple color */
     display: block;
+    font-weight: bold;
     margin-bottom: 5px;
 }
 
@@ -163,57 +167,126 @@ body {
 
 @media only screen and (max-width: 600px) {
     .container {
-        width: 100%;
-        height: auto; /* Adjust height dynamically */
-        flex-direction: column; /* Stack elements */
-        box-shadow: none; /* Remove shadow for cleaner mobile view */
-        border-radius: 0; /* Remove rounded corners */
-        justify-content: center !important;
+        width: 85%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+        border-radius: 20px;
+        background: #fff;
+        padding: 20px 15px;
     }
+
     .heading-container{
         text-align: center !important;
-        white-space: pre-line; /* Allows wrapping */
-        justify-content: center;
+        margin-bottom: 15px;
     }
 
-   
+   /* Reduce heading sizes */
+   .heading-container h1 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.heading-container h2 {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+}
+.taskflow {
+    font-family: 'Dancing Script', cursive;  /* Applies cursive only to 'TaskFlow' */
+    font-size: 12px;  /* Makes 'TaskFlow' slightly larger than rest */
+    font-weight: bold;
+}
+
 
     .login-section {
-        width: 90%; /* Expand login form to full width */
-        height: 80%; /* Take full height */
-        padding: 40px 20px; /* Adjust padding */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
     }
     .register-section {
-        width: 90%; /* Expand register form to full width */
-        height: 80%; /* Take full height */
-        padding: 40px 20px; /* Adjust padding */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
     }
 
     
     .image-section {
         display: none; /* Hide image section */
     }
+
+       /* Make logo larger */
+       .logo-container {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .logo-container img {
+        width: 100px; /* Adjust logo size */
+        height: auto;
+    }
 }
 
 @media only screen and (max-width: 600px) {
+
+       /* Reduce input box sizes */
+    .input-group {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
     .input-group input {
-        width: 80% !important; /* Full width input */
-        padding: 12px; /* Slightly larger padding */
-        font-size: 16px;
+        width: 200px;
+        padding: 8px;
+        font-size: 10px;
+        border-radius: 6px;
+        height:10px;
+    }
+
+     /* Reduce font size inside input fields */
+     .input-group label {
+        font-size: 12px; /* Smaller text for "Username" and "Password" */
+        color: #555; /* Slightly muted text color */
+        font-weight: normal;
     }
 
     .form-cont{
-        justify-content: center !important;
+        justify-content: left !important;
     }
+   
     .btn {
-        width: 60%; /* Make Sign In button full width */
-        padding: 12px;
-        font-size: 16px;
+        width: 210px;
+        height:30px;
+        padding: 8px;
+        font-size: 12px;
+        margin-top: 5px;
+        border-radius: 6px; /* Match input field style */
     }
 
+    /* Bottom text adjustments */
     .bottom-text {
         text-align: center;
-        font-size: 14px;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    /* Remove side background image */
+    .image-section {
+        display: none;
     }
 }
 

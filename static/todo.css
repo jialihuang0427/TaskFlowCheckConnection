@@ -1114,7 +1114,20 @@ h2 {
         z-index: 1101;
     }
    
-
+    .task-checkbox {
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+        margin-right: 8px;
+        accent-color: grey; /* Make it grey */
+    }
+    
+    /* Ensure line-through effect applies properly */
+    .task-item input[type="checkbox"]:checked + .task-number + .task-text {
+        text-decoration: line-through;
+        color: #888; /* Light grey text when checked */
+    }
+    
     .navbar  {
         display: block; /* Show hamburger icon */
         
@@ -1136,6 +1149,7 @@ h2 {
     .landing-content p {
         font-size: 1.2rem; /* Reduce paragraph text size */
     }
+
 }
 
 @media only screen and (max-width: 518px) {
